@@ -1,0 +1,164 @@
+/* Hero layout — single centered column */
+.hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+    padding: 5rem 2rem 4rem;
+    justify-items: center;
+}
+
+.hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 640px;
+    width: 100%;
+}
+
+/* Badge */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.badge-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Title second line */
+.hero-green {
+    color: var(--accent);
+    font-style: normal;
+}
+
+/* Center the CTA buttons */
+.hero-actions {
+    justify-content: center;
+}
+
+/* ------------------------------------------------------------------ */
+/* Dashboard mockup                                                    */
+/* ------------------------------------------------------------------ */
+
+.hero-dashboard {
+    width: 100%;
+    max-width: 680px;
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.dashboard-chrome {
+    background: var(--paper-warm);
+    padding: 0.6rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.chrome-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.chrome-dot.chrome-red    { background: #ff5f57; }
+.chrome-dot.chrome-yellow { background: #febc2e; }
+.chrome-dot.chrome-green  { background: #28c840; }
+
+.dashboard-body {
+    padding: 1.5rem 1.75rem;
+}
+
+/* Stat cards row */
+.dash-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.dash-stat { text-align: left; }
+
+.dash-stat-label {
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+}
+
+.dash-stat-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+}
+
+.dash-stat-sub {
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+}
+
+.dash-stat-sub.positive { color: var(--accent); }
+
+/* Category bars */
+.dash-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.dash-bar-row {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.dash-bar-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-align: left;
+}
+
+.dash-bar-track {
+    height: 8px;
+    background: var(--border-soft);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.dash-bar {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.dash-bar-food   { background: #e6a817; }
+.dash-bar-travel { background: #4a90d9; }
+.dash-bar-bills  { background: var(--accent); }
+
+/* ------------------------------------------------------------------ */
+/* Responsive                                                          */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+    .hero-dashboard { max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+    .dash-stats { grid-template-columns: 1fr 1fr; }
+    .dash-stat:last-child { display: none; }
+}
